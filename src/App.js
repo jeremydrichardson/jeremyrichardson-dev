@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+const markdown = `## What the heck!`;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Jeremy Richardson</h1>
+        <h2>I build software solutions that users love</h2>
       </header>
+      <main>
+        <h3>What I'm learning</h3>
+        <article>
+          <h4>The First blog article heading</h4>
+          <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
+        </article>
+      </main>
     </div>
   );
 }
